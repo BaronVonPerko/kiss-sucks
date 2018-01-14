@@ -8,16 +8,26 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class KissScraperTest extends TestCase {
+
+	protected $scraper;
+
+	protected function setUp() {
+		parent::setUp();
+		$this->scraper = new KissScraper();
+	}
+
+
 	/** @test */
 	function it_can_get_latest_songs_played() {
-    	$scraper = new KissScraper();
-
-    	$results = $scraper->fetchLatest();
+    	$results = $this->scraper->fetchLatest();
 
     	$this->assertEquals(200, $results->getStatusCode());
 
-    	$data = $scraper->getLatestSongs();
+    	$this->assertNotNull($results->getBody()->getContents());
+	}
 
-    	$this->assertNotNull($data);
+	/** @test */
+	function it_does() {
+		$this->scraper->getLatestSongs();
 	}
 }

@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\SongHistory;
 use GuzzleHttp\Client;
 
 class KissScraper {
@@ -38,11 +39,28 @@ class KissScraper {
 
 	/**
 	 * Get the latest songs in JSON format
+	 * and store them into our database.
 	 *
 	 * @return string
 	 */
 	function getLatestSongs() {
-		return $this->fetchLatest()->getBody()->getContents();
+		$songs = json_decode( $this->fetchLatest()->getBody()->getContents(), true );
+
+		foreach ( $songs['results'] as $song ) {
+			$existing = SongHistory::FindInstance(
+				$song['track_artist'],
+				$song['track_title'],
+				$song['timestamp_iso']
+			)->first();
+
+			if(!$existing) {
+				SongHistory::create( [
+					'artist'      => $song['track_artist'],
+					'title'       => $song['track_title'],
+					'time_played' => $song['timestamp_iso']
+				] );
+			}
+		}
 	}
 
 }
