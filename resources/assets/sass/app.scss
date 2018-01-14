@@ -7,3 +7,12 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+html, body {
+  margin: 0;
+  font-family: Raleway, sans-serif;
+}
+
+.flex {
+  display: flex;
+}

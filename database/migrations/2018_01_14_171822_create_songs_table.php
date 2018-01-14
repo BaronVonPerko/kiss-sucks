@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSongHistoriesTable extends Migration
+class CreateSongsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateSongHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('song_histories', function (Blueprint $table) {
+        Schema::create('songs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('artist');
             $table->string('title');
             $table->dateTime('time_played');
-            $table->string('image_url');
+            $table->string('image_url')->nullable();
+            $table->string('thumbnail_url')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateSongHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('song_histories');
+        Schema::dropIfExists('songs');
     }
 }

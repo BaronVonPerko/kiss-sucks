@@ -2,7 +2,7 @@
 
 namespace App\Scrapers;
 
-use App\SongHistory;
+use App\Song;
 use GuzzleHttp\Client;
 
 class KissScraper {
@@ -79,18 +79,19 @@ class KissScraper {
 	 */
 	public function parseSongs( $songs ) {
 		foreach ( $songs['results'] as $song ) {
-			$existing = SongHistory::FindInstance(
+			$existing = Song::FindInstance(
 				$song['track_artist'],
 				$song['track_title'],
 				$song['timestamp_iso']
 			)->first();
 
 			if ( ! $existing ) {
-				SongHistory::create( [
-					'artist'      => $song['track_artist'],
-					'title'       => $song['track_title'],
-					'time_played' => $song['timestamp_iso'],
-					'image_url'   => $song['track']['artists'][0]['large_image']
+				Song::create( [
+					'artist'        => $song['track_artist'],
+					'title'         => $song['track_title'],
+					'time_played'   => $song['timestamp_iso'],
+					'image_url'     => $song['track']['artists'][0]['large_image'],
+					'thumbnail_url' => $song['track']['artists'][0]['thumbnail'],
 				] );
 			}
 		}
