@@ -66,7 +66,7 @@ class KissScraper {
 
 			$this->parseSongs( $songs );
 
-			if($songs['next']) {
+			if ( $songs['next'] ) {
 				$page += 1;
 			} else {
 				$page = false;
@@ -89,7 +89,8 @@ class KissScraper {
 				SongHistory::create( [
 					'artist'      => $song['track_artist'],
 					'title'       => $song['track_title'],
-					'time_played' => $song['timestamp_iso']
+					'time_played' => $song['timestamp_iso'],
+					'image_url'   => $song['track']['artists'][0]['large_image']
 				] );
 			}
 		}

@@ -18,6 +18,7 @@ class CreateSongHistoriesTable extends Migration
             $table->string('artist');
             $table->string('title');
             $table->dateTime('time_played');
+            $table->string('image_url');
             $table->timestamps();
         });
     }
