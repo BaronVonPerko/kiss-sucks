@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Services\KissScraper;
+use App\Scrapers\KissScraper;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;

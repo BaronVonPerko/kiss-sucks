@@ -5,21 +5,21 @@ namespace App\Console\Commands;
 use App\Scrapers\KissScraper;
 use Illuminate\Console\Command;
 
-class FetchLatestSongs extends Command
+class FetchAllSongs extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'fetch:latest';
+    protected $signature = 'fetch:all';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Fetch the latest songs from the KISS API';
+    protected $description = 'Fetch all songs from the KISS API';
 
     /**
      * Create a new command instance.
@@ -38,10 +38,11 @@ class FetchLatestSongs extends Command
      */
     public function handle()
     {
+        $this->info("Fetching ...");
+
         $scraper = new KissScraper();
+        $scraper->getAllSongs();
 
-        $scraper->getLatestSongs();
-
-        $this->info("Latest songs fetched.");
+        $this->info("Fetch complete.");
     }
 }
