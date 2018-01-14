@@ -25,9 +25,4 @@ class KissScraperTest extends TestCase {
 
     	$this->assertNotNull($results->getBody()->getContents());
 	}
-
-	/** @test */
-	function it_does() {
-		$this->scraper->getLatestSongs();
-	}
 }
