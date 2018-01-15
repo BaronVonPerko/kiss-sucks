@@ -12,6 +12,47 @@ main {
   grid-column-gap: 20px;
 }
 
+.section-title {
+  margin-bottom: 0;
+}
+
+.section-subtitle {
+  font-style: italic;
+}
+
+.box-stats {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.box-stats .section {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10px 0;
+  height: 100%;
+}
+
+.box-stats .section:last-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.box-stats .section .data {
+  font-size: 22px;
+}
+
 ul {
   list-style: none;
   padding: 0;

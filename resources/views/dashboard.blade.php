@@ -18,7 +18,25 @@
 
 <main>
 
-    <div class="content"></div>
+    <div class="content">
+        <h3 class="section-title">Statistics of 99.5 Kiss San Antonio</h3>
+        <small class="section-subtitle">Data Retrieved Since {{$oldest}}</small>
+
+        <div class="box-stats">
+            <div class="section">
+                <div class="section-heading">Total Songs</div>
+                <div class="data">{{number_format($songCount)}}</div>
+            </div>
+            <div class="section">
+                <div class="section-heading">Unique Songs</div>
+                <div class="data">{{number_format($uniqueSongs)}}</div>
+            </div>
+            <div class="section">
+                <div class="section-heading">Unique Artists</div>
+                <div class="data">{{number_format($uniqueArtists)}}</div>
+            </div>
+        </div>
+    </div>
 
     <aside>
         <h4>Latest Sucky Songs</h4>
