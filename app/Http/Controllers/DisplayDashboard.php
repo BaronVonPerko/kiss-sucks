@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class DisplayDashboard extends Controller {
 	public function __invoke() {
-		$songs            = Song::Latest( 5 )->get();
+		$songs            = Song::Latest( 10 )->get();
 		$oldestDate       = Song::orderBy( 'time_played', 'asc' )->pluck( 'time_played' )->first();
 		$songCount        = Song::count();
 		$uniqueArtists    = Song::select( 'artist' )->distinct()->get()->count();
