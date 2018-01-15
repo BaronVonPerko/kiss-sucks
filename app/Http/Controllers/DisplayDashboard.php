@@ -15,7 +15,7 @@ class DisplayDashboard extends Controller {
 		$mostPlayedArtist = Song::select( 'artist' )->groupBy( 'artist' )->orderByRaw( 'count(*) desc' )->limit( 1 )->pluck( 'artist' )->first();
 		$uniqueSongs      = Song::select( [ 'artist', 'title' ] )->distinct()->get()->count();
 
-		return view( 'main', [
+		return view( 'dashboard', [
 			'songs'            => $songs,
 			'oldest'           => Carbon::parse( $oldestDate )->toDateString(),
 			'songCount'        => $songCount,

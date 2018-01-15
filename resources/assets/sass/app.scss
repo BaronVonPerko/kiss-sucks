@@ -1,18 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-// Variables
-@import "variables";
-
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
-
-html, body {
-  margin: 0;
-  font-family: Raleway, sans-serif;
+html {
+  font-family: Raleway,sans-serif;
 }
 
-.flex {
-  display: flex;
+body {
+  background-color: #e8eaed;
+}
+
+main {
+  display: grid;
+  grid-template-columns: auto 200px;
+  grid-column-gap: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  li.song-card {
+    display: grid;
+    grid-template-columns: 40px auto;
+    font-size: 12px;
+    margin: 4px 0;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .song-details {
+      line-height: 12px;
+      padding-left: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      p { margin: 0;}
+    }
+  }
 }
