@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+$mobile: 650px;
 
 html {
   font-family: Raleway,sans-serif;
@@ -13,6 +14,11 @@ main {
   display: grid;
   grid-template-columns: auto 200px;
   grid-column-gap: 20px;
+
+  @media(max-width: $mobile) {
+    display: flex;
+    flex-direction:column;
+  }
 }
 
 .section-title {
@@ -60,13 +66,16 @@ ul {
     color: white;
     opacity: 0.9;
     cursor: pointer;
-    transition: opacity 200ms ease;
+    transition: opacity 400ms ease, transform 120ms ease;
 
     &:nth-child(7) { opacity: 0.8;}
     &:nth-child(8) { opacity: 0.6;}
     &:nth-child(9) { opacity: 0.4;}
     &:nth-child(10) { opacity: 0.2;}
-    &:hover {opacity: 1;}
+    &:hover {
+      opacity: 1;
+      @media(min-width: $mobile) { transform: translateX(-10px); }
+    }
 
     img {
       width: 40px;

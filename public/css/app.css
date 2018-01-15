@@ -12,6 +12,18 @@ main {
   grid-column-gap: 20px;
 }
 
+@media (max-width: 650px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .section-title {
   margin-bottom: 0;
 }
@@ -67,8 +79,10 @@ ul li.song-card {
   color: white;
   opacity: 0.9;
   cursor: pointer;
-  -webkit-transition: opacity 200ms ease;
-  transition: opacity 200ms ease;
+  -webkit-transition: opacity 400ms ease, -webkit-transform 120ms ease;
+  transition: opacity 400ms ease, -webkit-transform 120ms ease;
+  transition: opacity 400ms ease, transform 120ms ease;
+  transition: opacity 400ms ease, transform 120ms ease, -webkit-transform 120ms ease;
 }
 
 ul li.song-card:nth-child(7) {
@@ -89,6 +103,13 @@ ul li.song-card:nth-child(10) {
 
 ul li.song-card:hover {
   opacity: 1;
+}
+
+@media (min-width: 650px) {
+  ul li.song-card:hover {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
 }
 
 ul li.song-card img {
