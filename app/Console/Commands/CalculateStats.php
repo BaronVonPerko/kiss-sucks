@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Services\CalculateStatsService;
+use App\Services\CalculateTopArtistsService;
 use Illuminate\Console\Command;
 
 class CalculateStats extends Command
@@ -39,5 +40,6 @@ class CalculateStats extends Command
     public function handle()
     {
         new CalculateStatsService();
+        new CalculateTopArtistsService();
     }
 }

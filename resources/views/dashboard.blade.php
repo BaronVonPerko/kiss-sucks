@@ -36,6 +36,12 @@
                 <div class="data">{{number_format($uniqueArtists)}}</div>
             </div>
         </div>
+
+        <h3>Most Played Artists</h3>
+        <small>Makes up <strong>{{$topArtistsTotalPercent}}%</strong> of all songs played.</small>
+        @foreach($topArtists as $artist)
+            <p>{{$artist->name}} | {{$artist->percent}}</p>
+        @endforeach
     </div>
 
     <aside>
