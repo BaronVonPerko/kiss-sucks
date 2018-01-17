@@ -39,10 +39,22 @@ class FetchReleaseYears extends Command
      */
     public function handle()
     {
-        $scraper = new DiscogsScraper();
-	    $songs = Song::first();
-	    $results = $scraper->search($songs->artist, $songs->title);
+    	$this->info('Fetching release years');
 
-	    dd($results['results'][0]['year']);
+        $scraper = new DiscogsScraper();
+	    $songs = Song::whereNull('release_year')->take(10)->get();
+
+	    foreach($songs as $song) {
+		    $results = $scraper->search($song->artist, $song->title);
+		    $releaseYear = $results['results'][0]['year'];
+
+		    $this->info("Updateing $song->title with date of $releaseYear");
+
+		    Song::whereArtist($song->artist)
+		        ->whereTitle($song->title)
+			    ->update(['release_year' => $releaseYear]);
+	    }
+
+	    $this->info('Complete');
     }
 }
