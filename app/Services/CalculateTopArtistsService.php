@@ -18,15 +18,31 @@ class CalculateTopArtistsService {
 
 		$artists = [];
 
-		foreach($mostPlayedArtists as $artist) {
-			$timesPlayed = Song::whereArtist($artist)->count();
+		foreach ( $mostPlayedArtists as $artist ) {
+			$timesPlayed = Song::whereArtist( $artist )->count();
 
-			$percent = number_format($timesPlayed / $totalSongs * 100, 2);
+			$percent = number_format( $timesPlayed / $totalSongs * 100, 2 );
 
-			$artists[] = ['name' => $artist, 'percent' => $percent];
+			$artists[] = [ 'name' => $artist, 'percent' => $percent ];
 		}
 
 		TopArtist::truncate();
-		TopArtist::insert($artists);
+		TopArtist::insert( $artists );
+	}
+
+	static function getTopArtists() {
+		$topArtists = TopArtist::get();
+
+		$topArtists->map(function ($artist) {
+			$artist['image'] = Song::whereArtist($artist->name)->first()->song_url;
+			return $artist;
+		});
+
+		$topArtistsTotalPercent = 0;
+		foreach ( $topArtists as $artist ) {
+			$topArtistsTotalPercent += $artist->percent;
+		}
+
+		return ["list" => $topArtists, "totalPercent" => $topArtistsTotalPercent];
 	}
 }

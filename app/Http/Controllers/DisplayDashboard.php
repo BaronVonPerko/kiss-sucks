@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\CalculateTopArtistsService;
 use App\Song;
 use App\Stat;
 use App\TopArtist;
@@ -12,20 +13,16 @@ class DisplayDashboard extends Controller {
 	public function __invoke() {
 		$stats = Stat::Latest()->first();
 
-		$songs                  = Song::Latest( 10 )->get();
-		$topArtists             = TopArtist::get();
-		$topArtistsTotalPercent = 0;
-		foreach ( $topArtists as $artist ) {
-			$topArtistsTotalPercent += $artist->percent;
-		}
+		$songs      = Song::Latest( 10 )->get();
+		$topArtists = CalculateTopArtistsService::getTopArtists();
 
 		return view( 'dashboard', [
 			'songs'                  => $songs,
 			'oldest'                 => $stats->oldest_date,
 			'songCount'              => $stats->total_songs,
 			'uniqueArtists'          => $stats->unique_artists,
-			'topArtists'             => $topArtists,
-			'topArtistsTotalPercent' => $topArtistsTotalPercent,
+			'topArtists'             => $topArtists["list"],
+			'topArtistsTotalPercent' => $topArtists["totalPercent"],
 			'uniqueSongs'            => $stats->unique_songs,
 		] );
 	}

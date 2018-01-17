@@ -3,7 +3,8 @@
 @import "footer";
 @import "latest_songs.scss";
 @import "stats.scss";
-@import "_variables.scss";
+@import "top_artists";
+@import "variables";
 
 html {
   font-family: Raleway,sans-serif;
@@ -31,13 +32,19 @@ main {
   }
 }
 
-.section-title {
-  margin-bottom: 0;
+section {
+  padding-bottom: 40px;
+
+  .section-title {
+    margin-bottom: 0;
+  }
+
+  .section-subtitle {
+    font-style: italic;
+  }
 }
 
-.section-subtitle {
-  font-style: italic;
-}
+
 
 
 

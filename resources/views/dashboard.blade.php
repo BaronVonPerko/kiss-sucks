@@ -19,29 +19,13 @@
 <main>
 
     <div class="content">
-        <h3 class="section-title">Statistics of 99.5 Kiss San Antonio</h3>
-        <small class="section-subtitle">Songs played since {{$oldest}}, statistics updated hourly.</small>
+        <section>
+            @include('_stats_boxes')
+        </section>
 
-        <div class="box-stats">
-            <div class="section">
-                <div class="section-heading">Total Songs</div>
-                <div class="data">{{number_format($songCount)}}</div>
-            </div>
-            <div class="section">
-                <div class="section-heading">Unique Songs</div>
-                <div class="data">{{number_format($uniqueSongs)}}</div>
-            </div>
-            <div class="section">
-                <div class="section-heading">Unique Artists</div>
-                <div class="data">{{number_format($uniqueArtists)}}</div>
-            </div>
-        </div>
-
-        <h3>Most Played Artists</h3>
-        <small>Makes up <strong>{{$topArtistsTotalPercent}}%</strong> of all songs played.</small>
-        @foreach($topArtists as $artist)
-            <p>{{$artist->name}} | {{$artist->percent}}</p>
-        @endforeach
+        <section>
+            @include('_most_played')
+        </section>
     </div>
 
     <aside>
@@ -51,7 +35,7 @@
 </main>
 
 <footer>
-    <a href="http://ChrisPerko.net" target="_blank">&copy; <?php echo date('Y'); ?> Chris Perko</a>
+    <a href="http://ChrisPerko.net" target="_blank">&copy; <?php echo date( 'Y' ); ?> Chris Perko</a>
 </footer>
 
 </body>

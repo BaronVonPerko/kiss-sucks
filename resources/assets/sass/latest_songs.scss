@@ -1,3 +1,5 @@
+@import "variables";
+
 ul.latest-songs-list {
   list-style: none;
   padding: 0;
@@ -7,7 +9,7 @@ ul.latest-songs-list {
     grid-template-columns: 40px auto;
     font-size: 12px;
     margin: 4px 0;
-    background-color: #2c0c30;
+    background-color: $accent_color;
     color: white;
     opacity: 0.9;
     cursor: pointer;
