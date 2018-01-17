@@ -125,6 +125,13 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+	/**
+	 * Discogs
+	 */
+	'discogs_key' => env('DISCOGS_KEY', null),
+
+	'discogs_secret' => env('DISCOGS_SECRET', null),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
