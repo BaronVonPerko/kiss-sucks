@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('fetch:latest')->everyMinute();
+        $schedule->command('fetch:releases')->everyMinute();
         $schedule->command('stats:calculate')->hourly();
     }
 

@@ -44,11 +44,18 @@ class FetchReleaseYears extends Command
         $scraper = new DiscogsScraper();
 	    $songs = Song::whereNull('release_year')->take(10)->get();
 
+	    if($songs->count() == 0) {
+	    	$this->info('No songs to look up.');
+	    	return;
+	    }
+
 	    foreach($songs as $song) {
 		    $results = $scraper->search($song->artist, $song->title);
+		    if(empty($results['results'])) continue;
+		    
 		    $releaseYear = $results['results'][0]['year'];
 
-		    $this->info("Updateing $song->title with date of $releaseYear");
+		    $this->info("Updating $song->title with date of $releaseYear");
 
 		    Song::whereArtist($song->artist)
 		        ->whereTitle($song->title)

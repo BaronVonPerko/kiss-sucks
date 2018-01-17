@@ -4,7 +4,12 @@
         <li class="song-card">
             <img src="{{$song->song_url}}" alt="">
             <div class="song-details">
-                <p>{{$song->title}}</p>
+                <p>
+                    {{$song->title}}
+                    @if($song->release_year)
+                        <em>({{$song->release_year}})</em>
+                    @endempty
+                </p>
                 <p>{{$song->artist}}</p>
             </div>
         </li>
