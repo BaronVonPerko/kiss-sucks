@@ -43,7 +43,6 @@ class KissScraper {
 	 * Get the latest songs in JSON format
 	 * and store them into our database.
 	 *
-	 * @return string
 	 */
 	function getLatestSongs() {
 		$songs = json_decode( $this->fetchLatest()->getBody()->getContents(), true );
@@ -55,10 +54,10 @@ class KissScraper {
 	/**
 	 * Fetch all songs from the API to
 	 * as far back as possible.
+	 *
+	 * @param int $page
 	 */
-	function getAllSongs() {
-		$page = 1;
-
+	function getAllSongs($page = 1) {
 		while ( $page ) {
 			echo "Fetching Page $page\r\n";
 

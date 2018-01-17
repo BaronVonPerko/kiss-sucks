@@ -21,7 +21,7 @@ header {
 
 main {
   display: grid;
-  grid-template-columns: auto 200px;
+  grid-template-columns: minmax(350px, 75%) minmax(300px, 25%);
   grid-column-gap: 20px;
   padding: 0 20px;
 

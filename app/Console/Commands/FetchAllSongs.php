@@ -12,7 +12,7 @@ class FetchAllSongs extends Command
      *
      * @var string
      */
-    protected $signature = 'fetch:all';
+    protected $signature = 'fetch:all {--page= : The Page ID to start at}';
 
     /**
      * The console command description.
@@ -34,14 +34,15 @@ class FetchAllSongs extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
      */
     public function handle()
     {
+    	$page = $this->option('page');
+
         $this->info("Fetching ...");
 
         $scraper = new KissScraper();
-        $scraper->getAllSongs();
+        $scraper->getAllSongs(empty($page) ? 1 : $page);
 
         $this->info("Fetch complete.");
     }
