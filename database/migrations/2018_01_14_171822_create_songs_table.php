@@ -20,7 +20,6 @@ class CreateSongsTable extends Migration
             $table->dateTime('time_played');
             $table->string('image_url')->nullable();
             $table->string('thumbnail_url')->nullable();
-	        $table->string('release_year')->nullable();
             $table->timestamps();
         });
     }

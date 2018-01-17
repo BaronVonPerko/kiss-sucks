@@ -52,7 +52,7 @@ class FetchReleaseYears extends Command
 	    foreach($songs as $song) {
 		    $results = $scraper->search($song->artist, $song->title);
 		    if(empty($results['results'])) continue;
-		    
+
 		    $releaseYear = $results['results'][0]['year'];
 
 		    $this->info("Updating $song->title with date of $releaseYear");
