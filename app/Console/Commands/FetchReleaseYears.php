@@ -55,11 +55,10 @@ class FetchReleaseYears extends Command
 
 		    if(!array_key_exists('year', $results['results'][0])) {
 			    $this->updateReleaseYear($song, 'UNKNOWN');
+			    continue;
 		    }
 
 		    $releaseYear = $results['results'][0]['year'];
-
-		    $this->info("Updating $song->title with date of $releaseYear");
 
 		    $this->updateReleaseYear($song, $releaseYear);
 	    }
@@ -68,6 +67,8 @@ class FetchReleaseYears extends Command
     }
 
     private function updateReleaseYear($song, $releaseYear) {
+	    $this->info("Updating $song->title with date of $releaseYear");
+
 	    Song::whereArtist($song->artist)
 	        ->whereTitle($song->title)
 	        ->update(['release_year' => $releaseYear]);
