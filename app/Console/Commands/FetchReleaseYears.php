@@ -51,11 +51,10 @@ class FetchReleaseYears extends Command
 
 	    foreach($songs as $song) {
 		    $results = $scraper->search($song->artist, $song->title);
-		    if(empty($results['results'])) continue;
-
-		    if(!array_key_exists('year', $results['results'][0])) {
-			    $this->updateReleaseYear($song, 'UNKNOWN');
-			    continue;
+		    if(empty($results['results']) || !array_key_exists('year', $results['results'][0]))
+		    {
+		    	$this->updateReleaseYear($song, 'UNKNOWN');
+		    	continue;
 		    }
 
 		    $releaseYear = $results['results'][0]['year'];
