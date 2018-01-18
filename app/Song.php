@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\SongCreated;
 use Illuminate\Database\Eloquent\Model;
 
 class Song extends Model {
@@ -51,4 +52,9 @@ class Song extends Model {
 	function scopeLatest( $query, $number = 10 ) {
     	return $query->orderBy('time_played', 'desc')->take($number);
 	}
+
+
+	protected $dispatchesEvents = [
+		'created' => SongCreated::class,
+	];
 }
