@@ -16,4 +16,4 @@
     </div>
 </div>
 
-<h4>Songs range from the year {{$oldestRelease}} to {{$newestRelease}}</h4>
+{{--<h4>Songs range from the year {{$oldestRelease}} to {{$newestRelease}}</h4>--}}
