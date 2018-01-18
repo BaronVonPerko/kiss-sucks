@@ -55,6 +55,7 @@ class FetchReleaseYears extends Command
 
 		    if(!array_key_exists('year', $results['results'][0])) {
 			    $this->updateReleaseYear($song, 'UNKNOWN');
+			    continue;
 		    }
 
 		    $releaseYear = $results['results'][0]['year'];
