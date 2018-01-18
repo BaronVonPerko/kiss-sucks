@@ -24,6 +24,8 @@ class DisplayDashboard extends Controller {
 			'topArtists'             => $topArtists["list"],
 			'topArtistsTotalPercent' => $topArtists["totalPercent"],
 			'uniqueSongs'            => $stats->unique_songs,
+			'oldestRelease'          => $stats->oldest_release,
+			'newestRelease'          => $stats->newest_release,
 		] );
 	}
 }

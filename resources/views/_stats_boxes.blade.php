@@ -15,3 +15,5 @@
         <div class="data">{{number_format($uniqueArtists)}}</div>
     </div>
 </div>
+
+<h4>Songs range from the year {{$oldestRelease}} to {{$newestRelease}}</h4>

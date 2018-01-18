@@ -16,12 +16,16 @@ class CalculateStatsService {
 		$songCount     = Song::count();
 		$uniqueArtists = Song::select( 'artist' )->distinct()->get()->count();
 		$uniqueSongs   = Song::select( [ 'artist', 'title' ] )->distinct()->get()->count();
+		$oldestRelease = Song::where('release_year', '!=', 'UNKNOWN')->orderBy( 'release_year', 'asc' )->pluck( 'release_year' )->first();
+		$newestRelease = Song::where('release_year', '!=', 'UNKNOWN')->orderBy( 'release_year', 'desc' )->pluck( 'release_year' )->first();
 
 		Stat::create( [
 			'total_songs'    => $songCount,
 			'unique_songs'   => $uniqueSongs,
 			'unique_artists' => $uniqueArtists,
-			'oldest_date'    => $oldestDate
+			'oldest_date'    => $oldestDate,
+			'oldest_release' => $oldestRelease,
+			'newest_release' => $newestRelease,
 		] );
 	}
 
