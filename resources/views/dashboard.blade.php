@@ -38,5 +38,15 @@
     <a href="http://ChrisPerko.net" target="_blank">&copy; <?php echo date( 'Y' ); ?> Chris Perko</a>
 </footer>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-26651291-15"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-26651291-15');
+</script>
+
 </body>
 </html>
