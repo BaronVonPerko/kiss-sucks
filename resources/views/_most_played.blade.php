@@ -7,7 +7,10 @@
 @foreach($topArtists as $artist)
     <li>
         <img src="{{$artist->image}}" alt="">
-        <p>{{$artist->name}}</p>
+        <div class="artist-info">
+            <p>{{$artist->name}}</p>
+            <em>Last played {{$artist->last_played->diffForHumans()}}</em>
+        </div>
         <p class="percent">{{$artist->percent}}%</p>
     </li>
 @endforeach

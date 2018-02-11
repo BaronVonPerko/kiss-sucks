@@ -169,6 +169,28 @@ ul.most-played-artists li img {
   height: 60px;
 }
 
+ul.most-played-artists li .artist-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul.most-played-artists li .artist-info p {
+  margin: 2px;
+}
+
+ul.most-played-artists li .artist-info em {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 html {
   font-family: Raleway,sans-serif;
 }
