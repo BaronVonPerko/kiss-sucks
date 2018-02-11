@@ -12,7 +12,7 @@ class CalculateLastPlayedService {
     }
 
     private function calculate() {
-        $songs = Song::whereNull('last_played')->get();
+        $songs = Song::whereNull('last_played')->orderBy('time_played', 'desc')->get();
 
         foreach($songs as $song) {
             self::calculateForSong($song);
