@@ -7,21 +7,21 @@ use App\Services\CalculateStatsService;
 use App\Services\CalculateTopArtistsService;
 use Illuminate\Console\Command;
 
-class CalculateStats extends Command
+class CalculateLastPlayed extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'stats:calculate';
+    protected $signature = 'stats:lastplayed';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Calculate stats based on songs in database';
+    protected $description = 'Calculate the last time all the songs were played';
 
     /**
      * Create a new command instance.
@@ -40,7 +40,6 @@ class CalculateStats extends Command
      */
     public function handle()
     {
-        new CalculateStatsService();
-        new CalculateTopArtistsService();
+        new CalculateLastPlayedService();
     }
 }

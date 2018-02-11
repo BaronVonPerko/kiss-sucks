@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Services\CalculateLastPlayedService;
 use App\Song;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
@@ -18,7 +19,7 @@ class SongCreated
     /**
      * Create a new event instance.
      *
-     * @return void
+     * @param Song $song
      */
     public function __construct(Song $song)
     {
@@ -27,5 +28,7 @@ class SongCreated
         {
         	$song->update(['release_year' => $existing->release_year]);
         }
+
+        CalculateLastPlayedService::calculateForSong($song);
     }
 }

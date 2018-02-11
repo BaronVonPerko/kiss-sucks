@@ -37,6 +37,10 @@ ul.latest-songs-list {
       justify-content: center;
 
       p { margin: 1px;}
+
+      p.last-played {
+        font-style: italic;
+      }
     }
   }
 }
