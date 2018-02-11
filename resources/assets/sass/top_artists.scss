@@ -34,5 +34,19 @@ ul.most-played-artists {
       width: $img_size;
       height: $img_size;
     }
+
+    .artist-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      p {
+        margin: 2px;
+      }
+      em {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
   }
 }

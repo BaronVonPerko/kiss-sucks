@@ -23,7 +23,9 @@ class CalculateTopArtistsService {
 
 			$percent = number_format( $timesPlayed / $totalSongs * 100, 2 );
 
-			$artists[] = [ 'name' => $artist, 'percent' => $percent ];
+			$lastPlayed = Song::whereArtist($artist)->orderBy('time_played', 'desc')->take(2)->get();
+
+			$artists[] = [ 'name' => $artist, 'percent' => $percent, 'last_played' => $lastPlayed[1]->time_played ];
 		}
 
 		TopArtist::truncate();
