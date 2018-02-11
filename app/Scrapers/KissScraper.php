@@ -3,6 +3,7 @@
 namespace App\Scrapers;
 
 use App\Song;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 
 class KissScraper {
@@ -88,7 +89,7 @@ class KissScraper {
 				Song::create( [
 					'artist'        => $song['track_artist'],
 					'title'         => $song['track_title'],
-					'time_played'   => $song['timestamp_iso'],
+					'time_played'   => Carbon::parse($song['timestamp_iso']),
 					'image_url'     => $song['track']['artists'][0]['large_image'],
 					'thumbnail_url' => $song['track']['artists'][0]['thumbnail'],
 				] );
