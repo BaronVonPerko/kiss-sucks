@@ -12,7 +12,7 @@
                 </p>
                 <p>{{$song->artist}}</p>
                 @if($song->last_played)
-                    <p class="last-played">Also played {{$song->last_played->diffForHumans()}}</p>
+                    {{--<p class="last-played">Also played {{$song->last_played->diffForHumans()}}</p>--}}
                 @endif
             </div>
         </li>
