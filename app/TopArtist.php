@@ -8,5 +8,9 @@ class TopArtist extends Model
 {
     protected $guarded = [];
 
-    protected $dates = ['last_played'];
+    public function getLastPlayedAttribute() {
+        $song = Song::whereArtist($this->name)->orderBy('time_played', 'desc')->take(1)->first();
+
+        return $song->time_played->diffForHumans();
+    }
 }

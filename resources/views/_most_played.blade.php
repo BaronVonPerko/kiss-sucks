@@ -9,7 +9,7 @@
         <img src="{{$artist->image}}" alt="">
         <div class="artist-info">
             <p>{{$artist->name}}</p>
-            {{--<em>Last played {{$artist->last_played->diffForHumans()}}</em>--}}
+            <em>last played {{$artist->last_played}}</em>
         </div>
         <p class="percent">{{$artist->percent}}%</p>
     </li>
