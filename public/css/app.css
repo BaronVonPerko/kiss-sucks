@@ -1,4 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);footer {
+@import url(https://fonts.googleapis.com/css?family=Raleway);header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,5 +244,9 @@ section .section-title {
 
 section .section-subtitle {
   font-style: italic;
+}
+
+a {
+  color: black;
 }
 

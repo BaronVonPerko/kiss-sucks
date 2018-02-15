@@ -14,6 +14,11 @@
 
 <header>
     <h1>99.5 Kiss Sucks San Antonio</h1>
+    <p>
+        <a href="http://paypal.me/chrisperko" target="_blank">
+            Help keep this site ad free!
+        </a>
+    </p>
 </header>
 
 <main>
@@ -44,7 +49,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26651291-15"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-26651291-15');
