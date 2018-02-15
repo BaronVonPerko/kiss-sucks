@@ -38,6 +38,8 @@
     <a href="http://ChrisPerko.net" target="_blank">&copy; <?php echo date( 'Y' ); ?> Chris Perko</a>
 </footer>
 
+
+@if(App::environment('production'))
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26651291-15"></script>
 <script>
@@ -47,6 +49,7 @@
 
     gtag('config', 'UA-26651291-15');
 </script>
+@endif
 
 </body>
 </html>
