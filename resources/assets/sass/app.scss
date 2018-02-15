@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+@import "header";
 @import "footer";
 @import "latest_songs.scss";
 @import "stats.scss";
@@ -44,9 +45,6 @@ section {
   }
 }
 
-
-
-
-
-
-
+a {
+  color: black;
+}
