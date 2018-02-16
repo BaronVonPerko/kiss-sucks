@@ -107,6 +107,33 @@ ul.latest-songs-list li.song-card .song-details p.last-played {
   font-style: italic;
 }
 
+.search-form {
+  margin: 20px 0;
+}
+
+.search-form .autocomplete {
+  margin: 10px 0;
+}
+
+.search-form .autocomplete input {
+  padding: 10px;
+  font-size: 18pt;
+}
+
+.search-form .autocomplete ul {
+  text-align: left;
+}
+
+.song-stats {
+  text-align: center;
+}
+
+.song-stats .section {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+}
+
 .box-stats {
   margin: 30px 0;
   display: grid;

@@ -1,5 +1,5 @@
 <h3 class="section-title">Statistics of 99.5 Kiss San Antonio</h3>
-<small class="section-subtitle">Songs played since {{$oldest}}, statistics updated hourly.</small>
+<small class="section-subtitle">Songs played since {{$oldest}}, statistics updated hourly</small>
 
 <div class="box-stats">
     <div class="section">

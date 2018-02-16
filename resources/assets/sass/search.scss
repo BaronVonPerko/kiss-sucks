@@ -1,0 +1,25 @@
+.search-form {
+  margin: 20px 0;
+
+  .autocomplete {
+    margin: 10px 0;
+
+    input {
+      padding: 10px;
+      font-size: 18pt;
+    }
+    ul {
+      text-align: left;
+    }
+  }
+}
+
+.song-stats {
+  text-align: center;
+
+  .section {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+  }
+}

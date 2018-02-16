@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Kiss Sucks San Antonio</title>
 
@@ -21,11 +22,15 @@
     </p>
 </header>
 
-<main>
+<main id="app">
 
     <div class="content">
         <section>
             @include('_stats_boxes')
+        </section>
+
+        <section>
+            @include('_search')
         </section>
 
         <section>
@@ -59,6 +64,9 @@
         gtag('config', 'UA-26651291-15');
     </script>
 @endif
+
+<script src="{{ mix('js/app.js') }}"></script>
+
 
 </body>
 </html>
