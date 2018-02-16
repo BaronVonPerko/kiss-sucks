@@ -13,6 +13,8 @@
     // https://github.com/charliekassel/vuejs-autocomplete
     import Autocomplete from 'vuejs-auto-complete';
 
+    import axios from 'axios';
+
     export default {
 
         data: () => {
@@ -36,6 +38,12 @@
 
             fetchSongData () {
                 this.searching = true;
+
+                axios.get('api/songdata/' + this.artist + "/" + this.song)
+                    .then(res => {
+                        this.searching = false;
+                        console.log(res);
+                    });
             },
         }
     }

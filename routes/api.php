@@ -14,3 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/search/{query}', 'Search');
+Route::get('/songdata/{artist}/{title}', 'FetchSongData');
