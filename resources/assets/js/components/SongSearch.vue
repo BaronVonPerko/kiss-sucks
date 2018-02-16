@@ -8,7 +8,7 @@
         <em v-if="searching">Calculating data for {{title}} <strong>{{artist}}</strong></em>
         <div class="song-stats" v-if="stats">
             <h3>{{title}} <em>{{artist}}</em></h3>
-            <small class="section-subtitle">The following values show how many time this song or this artist has been played</small>
+            <small class="section-subtitle">The following values show how many times this song or artist has been played</small>
 
             <div class="section">
                 <div class="item">
