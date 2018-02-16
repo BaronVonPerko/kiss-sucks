@@ -21,11 +21,15 @@
     </p>
 </header>
 
-<main>
+<main id="app">
 
     <div class="content">
         <section>
             @include('_stats_boxes')
+        </section>
+
+        <section>
+            @include('_search')
         </section>
 
         <section>
@@ -59,6 +63,9 @@
         gtag('config', 'UA-26651291-15');
     </script>
 @endif
+
+<script src="{{ mix('js/app.js') }}"></script>
+
 
 </body>
 </html>

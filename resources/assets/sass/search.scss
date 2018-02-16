@@ -1,0 +1,14 @@
+.search-form {
+  margin: 20px 0;
+  text-align: center;
+
+  .autocomplete {
+    input {
+      padding: 10px;
+      font-size: 18pt;
+    }
+    ul {
+      text-align: left;
+    }
+  }
+}
