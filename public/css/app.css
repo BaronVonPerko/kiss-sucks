@@ -124,6 +124,16 @@ ul.latest-songs-list li.song-card .song-details p.last-played {
   text-align: left;
 }
 
+.song-stats {
+  text-align: center;
+}
+
+.song-stats .section {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+}
+
 .box-stats {
   margin: 30px 0;
   display: grid;

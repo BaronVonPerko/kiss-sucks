@@ -43072,6 +43072,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // https://github.com/charliekassel/vuejs-autocomplete
 
@@ -43084,7 +43113,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             searching: false,
             title: '',
-            artist: ''
+            artist: '',
+            stats: null
         };
     },
 
@@ -43094,7 +43124,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         songSelected: function songSelected(song) {
-            this.song = song.display.split('<strong>')[0];
+            this.title = song.display.split('<strong>')[0];
             this.artist = song.display.split('<strong>')[1].replace('</strong>', '');
             this.fetchSongData();
         },
@@ -43103,9 +43133,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.searching = true;
 
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('api/songdata/' + this.artist + "/" + this.song).then(function (res) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('api/songdata/' + this.artist + "/" + this.title).then(function (res) {
                 _this.searching = false;
-                console.log(res);
+                _this.stats = res.data;
             });
         }
     }
@@ -43136,8 +43166,57 @@ var render = function() {
       _vm._v(" "),
       _vm.searching
         ? _c("em", [
-            _vm._v("Calculating data for " + _vm._s(_vm.song) + " "),
+            _vm._v("Calculating data for " + _vm._s(_vm.title) + " "),
             _c("strong", [_vm._v(_vm._s(_vm.artist))])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.stats
+        ? _c("div", { staticClass: "song-stats" }, [
+            _c("h3", [
+              _vm._v(_vm._s(_vm.title) + " "),
+              _c("em", [_vm._v(_vm._s(_vm.artist))])
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "section-subtitle" }, [
+              _vm._v(
+                "The following values show how many time this song or this artist has been played"
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "section" }, [
+              _c("div", { staticClass: "item" }, [
+                _c("h4", [_vm._v("This Month")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("small", [_vm._v("Song")]),
+                  _vm._v(" "),
+                  _c("strong", [_vm._v(_vm._s(_vm.stats.songThisMonth))])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("small", [_vm._v("Artist")]),
+                  _vm._v(" "),
+                  _c("strong", [_vm._v(_vm._s(_vm.stats.artistThisMonth))])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "item" }, [
+                _c("h4", [_vm._v("Last Month")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("small", [_vm._v("Song")]),
+                  _vm._v(" "),
+                  _c("strong", [_vm._v(_vm._s(_vm.stats.songLastMonth))])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("small", [_vm._v("Artist")]),
+                  _vm._v(" "),
+                  _c("strong", [_vm._v(_vm._s(_vm.stats.artistLastMonth))])
+                ])
+              ])
+            ])
           ])
         : _vm._e()
     ],

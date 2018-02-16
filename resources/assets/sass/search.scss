@@ -13,3 +13,13 @@
     }
   }
 }
+
+.song-stats {
+  text-align: center;
+
+  .section {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+  }
+}
