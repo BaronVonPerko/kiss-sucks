@@ -9,9 +9,6 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-// https://github.com/charliekassel/vuejs-autocomplete
-import Autocomplete from 'vuejs-auto-complete';
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -19,10 +16,8 @@ import Autocomplete from 'vuejs-auto-complete';
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('song-search', require('./components/SongSearch.vue'));
 
 const app = new Vue({
     el: '#app',
-    components: {
-        Autocomplete,
-    },
 });

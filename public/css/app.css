@@ -109,7 +109,10 @@ ul.latest-songs-list li.song-card .song-details p.last-played {
 
 .search-form {
   margin: 20px 0;
-  text-align: center;
+}
+
+.search-form .autocomplete {
+  margin: 10px 0;
 }
 
 .search-form .autocomplete input {

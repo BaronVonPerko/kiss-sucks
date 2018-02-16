@@ -1,10 +1,5 @@
 <h3 class="section-title">Search</h3>
 <small class="section-subtitle">Search for a song by the title or artist to see how often it has played</small>
 
-<div class="search-form">
-    <autocomplete
-            source="api/search/"
-            placeholder="Search...">
-    </autocomplete>
-</div>
+<song-search></song-search>
 
