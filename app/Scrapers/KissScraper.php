@@ -24,6 +24,7 @@ class KissScraper {
 	 * @param int $page
 	 *
 	 * @return mixed|\Psr\Http\Message\ResponseInterface
+	 * @throws \GuzzleHttp\Exception\GuzzleException
 	 */
 	function fetchLatest( $page = 1 ) {
 		return $this->client->request(
