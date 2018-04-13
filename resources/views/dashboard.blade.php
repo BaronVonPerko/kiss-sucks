@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Kiss Sucks San Antonio</title>
+    <meta name="description" content="99.5 Kiss Sucks San Antonio! An analysis of the songs played
+by the radio station over the past few years.  Search for a song to see how often and overplayed it
+really is!  See the latest sucky songs played in real time!">
+
+    <meta name="keywords" content="kiss sucks,kiss san antonio,99.5 kiss,san antonio radio,san antonio">
+
+    <title>99.5 Kiss Sucks San Antonio</title>
 
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
 
