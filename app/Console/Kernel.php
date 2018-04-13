@@ -27,6 +27,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('fetch:latest')->everyMinute();
         $schedule->command('fetch:releases')->everyMinute();
         $schedule->command('stats:calculate')->hourly();
+        $schedule->command('sitemap:generate')->daily();
     }
 
     /**
